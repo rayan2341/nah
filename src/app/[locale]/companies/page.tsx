@@ -1,6 +1,7 @@
 import { getTranslations, getLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, ArrowLeft, ExternalLink } from "lucide-react";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -28,6 +29,7 @@ export default async function CompaniesPage() {
       accentColor: "#C9A84C",
       bgColor: "#0A2342",
       number: "01",
+      logo: "/logos/preem.png",
     },
     {
       key: "frashah",
@@ -41,6 +43,7 @@ export default async function CompaniesPage() {
       accentColor: "#C9A84C",
       bgColor: "#1A0A2E",
       number: "02",
+      logo: "/logos/frashah.png",
     },
     {
       key: "noor",
@@ -54,6 +57,7 @@ export default async function CompaniesPage() {
       accentColor: "#C9A84C",
       bgColor: "#0A1A0A",
       number: "03",
+      logo: null,
     },
   ];
 
@@ -92,7 +96,18 @@ export default async function CompaniesPage() {
                     <p className="text-[var(--gold)] text-5xl font-bold opacity-20 mb-4">
                       {brand.number}
                     </p>
-                    <h2 className="text-white text-3xl font-bold mb-1">
+                    {brand.logo && (
+                      <div className="bg-white inline-block px-3 py-2 mb-5">
+                        <Image
+                          src={brand.logo}
+                          alt={brand.nameEn}
+                          width={120}
+                          height={56}
+                          className="object-contain h-12 w-auto"
+                        />
+                      </div>
+                    )}
+                  <h2 className="text-white text-3xl font-bold mb-1">
                       {brand.name}
                     </h2>
                     <p className="text-white/40 text-sm mb-5">{brand.nameEn}</p>

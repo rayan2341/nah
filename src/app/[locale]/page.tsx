@@ -1,6 +1,7 @@
 import { getTranslations, getLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, ArrowLeft, ChevronDown } from "lucide-react";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -49,6 +50,7 @@ export default async function HomePage() {
       status: tc("preem.status"),
       website: "https://preemsa.com",
       color: "#0A2342",
+      logo: "/logos/preem.png",
     },
     {
       key: "frashah",
@@ -59,6 +61,7 @@ export default async function HomePage() {
       status: tc("frashah.status"),
       website: "https://frashahsa.com",
       color: "#1A0A2E",
+      logo: "/logos/frashah.png",
     },
     {
       key: "noor",
@@ -69,6 +72,7 @@ export default async function HomePage() {
       status: tc("noor.status"),
       website: null,
       color: "#0A1A0A",
+      logo: null,
     },
   ];
 
@@ -203,6 +207,18 @@ export default async function HomePage() {
                 </div>
 
                 <div className="p-8 pt-14">
+                  {/* Logo */}
+                  {brand.logo && (
+                    <div className="bg-white inline-block px-3 py-2 mb-5">
+                      <Image
+                        src={brand.logo}
+                        alt={brand.nameEn}
+                        width={100}
+                        height={50}
+                        className="object-contain h-10 w-auto"
+                      />
+                    </div>
+                  )}
                   {/* Brand name */}
                   <h3 className="text-white text-2xl font-bold mb-1">
                     {brand.name}
