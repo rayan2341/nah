@@ -20,6 +20,7 @@ export default async function Footer() {
     { key: "news", href: "/news" },
     { key: "careers", href: "/careers" },
     { key: "contact", href: "/contact" },
+    { key: "privacy", href: "/privacy" },
   ] as const;
 
   const brands = [
