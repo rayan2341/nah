@@ -219,9 +219,9 @@ html[lang="en"] .co-logo{font-family:"Archivo",sans-serif}
 }
 .value p{font-size:13.8px;color:var(--sage);line-height:1.7}
 
-/* leadership (2 people) */
-.leaders{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,48px);margin-top:48px}
-.leader{display:grid;grid-template-columns:150px 1fr;gap:22px;align-items:start}
+/* leadership */
+.leaders{margin-top:48px}
+.leader{display:grid;grid-template-columns:230px 1fr;gap:clamp(26px,4vw,48px);align-items:start;max-width:900px}
 .portrait{
   aspect-ratio:4/5;background:var(--mint-2);border:1px solid var(--line);
   border-radius:var(--r);display:grid;place-items:center;text-align:center;padding:14px;overflow:hidden
@@ -229,9 +229,9 @@ html[lang="en"] .co-logo{font-family:"Archivo",sans-serif}
 .sec-mint .portrait{background:var(--white)}
 .portrait img{width:100%;height:100%;object-fit:cover}
 .portrait span{font-size:11.5px;color:var(--sage-lo);line-height:1.5}
-.leader h3{font-size:19px;margin-bottom:5px}
-.leader .role{font-size:13px;color:var(--brass);letter-spacing:.08em;margin-bottom:15px;font-weight:500}
-.leader p{font-size:14.5px;color:var(--pine-2);margin-bottom:11px;line-height:1.75}
+.leader h3{font-size:22px;margin-bottom:6px}
+.leader .role{font-size:13.5px;color:var(--brass);letter-spacing:.08em;margin-bottom:18px;font-weight:500}
+.leader p{font-size:15px;color:var(--pine-2);margin-bottom:12px;line-height:1.78;max-width:62ch}
 
 /* partnerships band */
 .partner-box{
@@ -273,6 +273,14 @@ footer{
 .foot-links{display:flex;gap:14px 26px;flex-wrap:wrap;align-content:start}
 .foot-links a{color:var(--pine-2);font-size:13.5px}
 .foot-links a:hover{color:var(--brass)}
+.foot-soon{
+  color:var(--sage-lo);font-size:13.5px;cursor:default;
+  display:inline-flex;align-items:center;gap:6px
+}
+.foot-soon::after{
+  content:"";width:5px;height:5px;border:1px solid var(--sage-lo);
+  transform:rotate(45deg);flex:none
+}
 .legal{display:flex;gap:12px 26px;flex-wrap:wrap;margin-top:24px;font-size:12.5px}
 .legal b{color:var(--pine);font-weight:500}
 .copy{margin-top:18px;font-size:12.5px;opacity:.75}
@@ -513,9 +521,10 @@ footer{
 
       <!-- Noor Auto Hub -->
       <div class="co">
-        <span class="status-badge badge-soon">
-          <span class="ar-only">مرحلة تجريبية</span>
-          <span class="en-only">Pilot Stage</span>
+        <span class="status-badge badge-active">
+          <span class="pulse"></span>
+          <span class="ar-only">متاح حاليًا</span>
+          <span class="en-only">Active</span>
         </span>
         <div class="co-top">
           <div class="co-logo">N</div>
@@ -532,6 +541,10 @@ footer{
         <p class="desc ar-only">تشمل الحلول منصة لإدارة عمليات المغسلة والعملاء والمبيعات والموظفين، بالإضافة إلى نظام يعتمد على الرؤية الحاسوبية والذكاء الاصطناعي لمراقبة حركة المركبات واحتسابها وتحليل الأداء التشغيلي بصورة آلية.</p>
         <p class="desc en-only">Noor Auto Hub is a technology venture developing digital solutions for car-wash owners and operators to improve operational efficiency, strengthen oversight, and provide more accurate decision-making data.</p>
         <p class="desc en-only">Its solutions include a platform for managing car-wash operations, customers, sales, and employees, as well as a computer-vision and artificial-intelligence system that automatically monitors vehicle movement, counts vehicles, and analyzes operational performance.</p>
+        <a class="golink" href="https://nah.sa" target="_blank" rel="noopener">
+          <span class="ar-only">زيارة موقع نور أوتو هب ←</span>
+          <span class="en-only">Visit Noor Auto Hub →</span>
+        </a>
         <div class="meta">
           <span class="ar-only"><b>القطاع:</b> البرمجيات والذكاء الاصطناعي وتقنيات المركبات</span>
           <span class="en-only"><b>Sector:</b> Software, Artificial Intelligence, and Automotive Technology</span>
@@ -715,26 +728,6 @@ footer{
 
     <div class="leaders">
 
-      <!-- Chairman -->
-      <div class="leader">
-        <div class="portrait">
-          <span class="ar-only">الصورة الرسمية<br>٤:٥</span>
-          <span class="en-only">Official portrait<br>4:5</span>
-        </div>
-        <div>
-          <h3>
-            <span class="ar-only">د. ريان صالح المغير</span>
-            <span class="en-only">Dr. Rayan Saleh Almoghyir</span>
-          </h3>
-          <p class="role ar-only">رئيس مجلس الإدارة</p>
-          <p class="role en-only">Chairman of the Board</p>
-          <p class="ar-only">يتولى د. ريان صالح المغير قيادة التوجه الاستراتيجي لشركة نواة الألماس القابضة والإشراف على محفظة مشاريعها وعلاماتها التجارية.</p>
-          <p class="ar-only">يركز دوره على اكتشاف الفرص، وتطوير المشاريع الجديدة، وتحديد أولويات الاستثمار والنمو، وبناء الشراكات التي تدعم توسع المجموعة وتحقيق أهدافها طويلة المدى.</p>
-          <p class="en-only">Dr. Rayan Saleh Almoghyir leads the strategic direction of Nawat Alalmas Holding and oversees its portfolio of ventures and brands.</p>
-          <p class="en-only">His role focuses on identifying opportunities, developing new ventures, setting investment and growth priorities, and building partnerships that support the group's long-term expansion.</p>
-        </div>
-      </div>
-
       <!-- CEO -->
       <div class="leader">
         <div class="portrait">
@@ -858,10 +851,14 @@ footer{
         <a href="#leadership"><span class="ar-only">القيادة</span><span class="en-only">Leadership</span></a>
         <a href="#partnerships"><span class="ar-only">الشراكات</span><span class="en-only">Partnerships</span></a>
         <a href="#contact"><span class="ar-only">تواصل معنا</span><span class="en-only">Contact</span></a>
-        <a class="ar-only" href="https://nah.sa/ar/careers">الوظائف</a>
-        <a class="en-only" href="https://nah.sa/en/careers">Careers</a>
-        <a class="ar-only" href="https://nah.sa/ar/privacy">سياسة الخصوصية</a>
-        <a class="en-only" href="https://nah.sa/en/privacy">Privacy Policy</a>
+        <span class="foot-soon" title="قريبًا">
+          <span class="ar-only">سياسة الخصوصية</span>
+          <span class="en-only">Privacy Policy</span>
+        </span>
+        <span class="foot-soon" title="قريبًا">
+          <span class="ar-only">الشروط والأحكام</span>
+          <span class="en-only">Terms and Conditions</span>
+        </span>
       </div>
     </div>
 
@@ -870,7 +867,7 @@ footer{
         <span class="ar-only">الاسم النظامي: </span>
         <span class="en-only">Registered name: </span>
         <b class="ar-only">شركة نواة الألماس القابضة</b>
-        <b class="en-only">Nawat Alalmas Company Holding</b>
+        <b class="en-only">Nawat alalmas Company Holding</b>
       </span>
       <span>
         <span class="ar-only">الرقم الوطني الموحد: </span>
