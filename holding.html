@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="شركة نواة الألماس القابضة — مظلة واحدة، كيانات متخصصة. عنيزة، القصيم.">
+<meta name="description" lang="en" content="Nawat Alalmas Holding — One umbrella, specialised entities. Unaizah, Qassim.">
+<title>نواة الألماس القابضة</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&family=Noto+Kufi+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pine:#23423F;
+  --pine-2:#2F5A56;
+  --sage:#6E908B;
+  --sage-lo:#9FB6B2;
+  --mint:#E4EDEA;
+  --mint-2:#EFF5F3;
+  --sand:#F4EFE6;
+  --paper:#FCFAF6;
+  --white:#FFFFFF;
+  --brass:#A8792F;
+  --brass-lo:#C99E52;
+  --line:rgba(35,66,63,.14);
+  --line-b:rgba(168,121,47,.3);
+  --maxw:1180px;
+  --pad:clamp(20px,5vw,64px);
+  --r:3px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:78px}
+body{
+  background:var(--paper);color:var(--pine);
+  font-family:"IBM Plex Sans Arabic","Archivo",system-ui,sans-serif;
+  font-weight:300;font-size:16.5px;line-height:1.8;-webkit-font-smoothing:antialiased
+}
+html[lang="en"] body{font-family:"Archivo",system-ui,sans-serif;font-weight:400;line-height:1.7}
+h1,h2,h3,h4{font-family:"Noto Kufi Arabic","Archivo",sans-serif;font-weight:500;line-height:1.32}
+html[lang="en"] h1,html[lang="en"] h2,html[lang="en"] h3,html[lang="en"] h4{
+  font-family:"Archivo",sans-serif;font-weight:600;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+svg,img{display:block;max-width:100%}
+button{font:inherit;cursor:pointer}
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad)}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+
+/* language toggle */
+html[lang="ar"] .en-only{display:none}
+html[lang="en"] .ar-only{display:none}
+
+/* shared */
+.eyebrow{
+  font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);
+  font-weight:500;display:flex;align-items:center;gap:12px;margin-bottom:18px
+}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--line-b);max-width:110px}
+.sec{padding-block:clamp(60px,8.5vw,110px)}
+.sec-sand{background:var(--sand)}
+.sec-mint{background:var(--mint)}
+.sec h2{font-size:clamp(26px,3.6vw,40px);margin-bottom:20px}
+.lede{font-size:clamp(16.5px,1.6vw,19px);color:var(--pine-2);max-width:62ch}
+.btn{
+  display:inline-block;padding:12px 25px;border-radius:var(--r);font-size:14.5px;
+  font-weight:500;transition:.22s;border:1px solid transparent;
+  font-family:"IBM Plex Sans Arabic",sans-serif
+}
+html[lang="en"] .btn{font-family:"Archivo",sans-serif}
+.btn-solid{background:var(--brass);color:#fff}
+.btn-solid:hover{background:var(--brass-lo)}
+.btn-ghost{border-color:var(--line);color:var(--pine)}
+.btn-ghost:hover{border-color:var(--brass);color:var(--brass)}
+
+/* header */
+header{
+  position:sticky;top:0;z-index:60;background:rgba(252,250,246,.92);
+  backdrop-filter:blur(14px);border-bottom:1px solid var(--line)
+}
+.nav{display:flex;align-items:center;gap:26px;height:74px}
+.brandmark{
+  display:flex;align-items:center;gap:11px;
+  font-family:"Noto Kufi Arabic",sans-serif;font-weight:700;font-size:15.5px;white-space:nowrap
+}
+html[lang="en"] .brandmark{font-family:"Archivo",sans-serif}
+.brandmark svg{width:27px;height:27px;flex:none}
+.menu{display:flex;gap:24px;margin-inline-start:auto;font-size:14px;font-weight:400}
+.menu a{color:var(--pine-2);padding-block:6px;border-bottom:1.5px solid transparent;transition:.2s}
+.menu a:hover{color:var(--pine);border-color:var(--brass)}
+.tools{display:flex;gap:8px;flex:none}
+.chip{
+  border:1px solid var(--line);background:none;
+  font:500 12px/1 "Archivo",sans-serif;letter-spacing:.09em;
+  padding:9px 12px;border-radius:var(--r);color:var(--pine-2);transition:.2s
+}
+.chip:hover{border-color:var(--brass);color:var(--brass)}
+.burger{display:none;background:none;border:0;padding:8px;margin-inline-start:auto}
+.burger span{display:block;width:22px;height:1.5px;background:var(--pine);margin:5px 0}
+
+/* hero */
+.hero{
+  background:linear-gradient(160deg,var(--mint-2) 0%,var(--paper) 55%,var(--sand) 100%);
+  padding-block:clamp(48px,6vw,74px) clamp(52px,6.5vw,80px);
+  border-bottom:1px solid var(--line)
+}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,70px);align-items:center}
+.hero h1{font-size:clamp(33px,5.4vw,60px);letter-spacing:-.01em;margin-bottom:20px}
+.hero p.sub{font-size:clamp(16.5px,1.7vw,20px);color:var(--pine-2);max-width:46ch;font-weight:300}
+.hero-cta{display:flex;gap:13px;flex-wrap:wrap;margin-top:34px}
+
+/* facet SVG */
+.facet{width:100%;height:auto}
+.facet .l1{fill:none;stroke:var(--brass);stroke-width:1.2;opacity:.75}
+.facet .l2{fill:none;stroke:var(--sage);stroke-width:1;opacity:.5}
+.facet .dot{fill:var(--brass)}
+.facet text{
+  font-family:"Noto Kufi Arabic",sans-serif;font-size:11.5px;fill:var(--sage);
+  letter-spacing:.04em;text-anchor:middle
+}
+html[lang="en"] .facet text{font-family:"Archivo",sans-serif;font-size:10.5px;letter-spacing:.1em}
+.facet .core{fill:var(--pine);font-size:13px;font-weight:700}
+.facet .co-label{font-size:12.5px;fill:var(--pine-2);font-weight:500}
+@media(prefers-reduced-motion:no-preference){
+  .facet .draw{
+    stroke-dasharray:700;stroke-dashoffset:700;
+    animation:dr 1.6s cubic-bezier(.22,1,.36,1) forwards
+  }
+  .facet .draw:nth-of-type(2){animation-delay:.12s}
+  .facet .draw:nth-of-type(3){animation-delay:.24s}
+  .facet .draw:nth-of-type(4){animation-delay:.36s}
+  .facet .fade{opacity:0;animation:fi .8s ease forwards .9s}
+}
+@keyframes dr{to{stroke-dashoffset:0}}
+@keyframes fi{to{opacity:1}}
+
+/* pillars */
+.pillars{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--line);margin-top:46px;border-block:1px solid var(--line)
+}
+.pillar{background:var(--paper);padding:29px 25px}
+.sec-sand .pillar{background:var(--sand)}
+.pillar h4{font-size:16px;margin-bottom:9px}
+.pillar p{font-size:14.5px;color:var(--sage);line-height:1.7}
+
+/* companies grid (3 cols) */
+.cos{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+.co{
+  border:1px solid var(--line);background:var(--white);
+  padding:28px 26px;border-radius:var(--r);transition:.25s;position:relative
+}
+.co:hover{border-color:var(--brass);box-shadow:0 8px 26px rgba(35,66,63,.07)}
+.co-top{display:flex;align-items:center;gap:14px;margin-bottom:17px}
+.co-logo{
+  width:48px;height:48px;border:1px solid var(--line-b);display:grid;place-items:center;
+  flex:none;border-radius:var(--r);
+  font:700 18px/1 "Noto Kufi Arabic",sans-serif;color:var(--brass)
+}
+html[lang="en"] .co-logo{font-family:"Archivo",sans-serif}
+.co h3{font-size:19px}
+.co .tag{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);font-weight:500}
+.co .desc{font-size:14px;color:var(--sage);margin-bottom:18px;line-height:1.65}
+.status-badge{
+  position:absolute;top:16px;inset-inline-end:16px;
+  font:500 10.5px/1 "Archivo",sans-serif;letter-spacing:.12em;text-transform:uppercase;
+  padding:4px 9px;border-radius:20px
+}
+.badge-active{background:rgba(168,121,47,.12);color:var(--brass);border:1px solid var(--line-b)}
+.badge-soon{background:var(--mint-2);color:var(--sage);border:1px solid var(--line)}
+.pulse{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--brass);
+  margin-inline-end:5px;animation:pulse 2s ease infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.golink{font-size:13.5px;color:var(--brass);border-bottom:1px solid var(--line-b);padding-bottom:3px;display:inline-block}
+.golink:hover{border-color:var(--brass)}
+.no-link{font-size:13.5px;color:var(--sage-lo)}
+
+/* sectors grid */
+.sectors{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:44px}
+.sector{
+  border:1px solid var(--line);padding:30px 26px;background:var(--white);
+  border-radius:var(--r);transition:.25s
+}
+.sector:hover{border-color:var(--brass);transform:translateY(-3px)}
+.sector .num{
+  font:500 11px/1 "Archivo",sans-serif;letter-spacing:.2em;color:var(--brass);
+  margin-bottom:14px;display:block
+}
+.sector h3{font-size:19px;margin-bottom:10px}
+.sector p{font-size:14px;color:var(--sage)}
+
+/* leadership */
+.leader{display:grid;grid-template-columns:240px 1fr;gap:clamp(26px,4vw,54px);align-items:start;margin-top:44px}
+.portrait{
+  aspect-ratio:4/5;background:var(--mint-2);border:1px solid var(--line);
+  border-radius:var(--r);display:grid;place-items:center;text-align:center;padding:18px;overflow:hidden
+}
+.portrait span{font-size:12px;color:var(--sage)}
+.leader h3{font-size:24px;margin-bottom:6px}
+.leader .role{font-size:14px;color:var(--brass);letter-spacing:.09em;margin-bottom:18px;font-weight:500}
+.leader p{font-size:15.5px;color:var(--pine-2);margin-bottom:13px;max-width:60ch}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,60px);margin-top:44px;align-items:start}
+.info dt{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);margin-top:22px;font-weight:500}
+.info dd{font-size:15px;margin-top:5px;color:var(--pine-2)}
+.info a{color:var(--brass)}
+.info a:hover{text-decoration:underline}
+.map-box{
+  background:var(--mint-2);border:1px solid var(--line);border-radius:var(--r);
+  padding:36px 28px;display:flex;flex-direction:column;gap:6px
+}
+.map-box .short-addr{
+  font:700 28px/1 "Archivo",sans-serif;letter-spacing:.08em;color:var(--brass);margin-bottom:10px
+}
+.map-box p{font-size:14.5px;color:var(--pine-2)}
+
+/* footer */
+footer{
+  background:var(--mint);border-top:1px solid var(--line);
+  padding-block:42px 28px;font-size:13.5px;color:var(--sage)
+}
+.foot-top{
+  display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;
+  padding-bottom:24px;border-bottom:1px solid var(--line)
+}
+.foot-links{display:flex;gap:20px;flex-wrap:wrap}
+.foot-links a:hover{color:var(--brass)}
+.legal{display:flex;gap:24px;flex-wrap:wrap;margin-top:20px;font-size:12.5px}
+.legal b{color:var(--pine);font-weight:500}
+.copy{margin-top:20px;font-size:12.5px;opacity:.75}
+
+/* reveal */
+@media(prefers-reduced-motion:no-preference){
+  .rv{opacity:0;transform:translateY(16px);transition:opacity .65s ease,transform .65s cubic-bezier(.22,1,.36,1)}
+  .rv.in{opacity:1;transform:none}
+}
+
+@media(max-width:900px){
+  .hero-grid,.contact-grid,.leader{grid-template-columns:1fr}
+  .pillars{grid-template-columns:1fr}
+  .cos{grid-template-columns:1fr 1fr}
+  .sectors{grid-template-columns:1fr}
+  .menu{
+    display:none;position:absolute;top:74px;inset-inline:0;background:var(--paper);
+    flex-direction:column;gap:0;padding:10px var(--pad) 22px;border-bottom:1px solid var(--line)
+  }
+  .menu.open{display:flex}
+  .menu a{padding-block:12px;border-bottom:1px solid var(--line)}
+  .burger{display:block}
+}
+@media(max-width:600px){
+  .cos{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ======================== HEADER ======================== -->
+<header>
+  <nav class="nav wrap">
+    <a class="brandmark" href="#top">
+      <svg viewBox="0 0 40 40" aria-hidden="true">
+        <path d="M20 3 L34 15 L20 37 L6 15 Z" fill="none" stroke="#A8792F" stroke-width="1.6"/>
+        <path d="M6 15 H34" fill="none" stroke="#6E908B" stroke-width="1"/>
+      </svg>
+      <span class="ar-only">نواة الألماس القابضة</span>
+      <span class="en-only">Nawat Alalmas Holding</span>
+    </a>
+    <button class="burger" id="burger" aria-label="القائمة" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="menu" id="menu">
+      <a href="#about"><span class="ar-only">من نحن</span><span class="en-only">About</span></a>
+      <a href="#companies"><span class="ar-only">شركاتنا</span><span class="en-only">Companies</span></a>
+      <a href="#sectors"><span class="ar-only">القطاعات</span><span class="en-only">Sectors</span></a>
+      <a href="#leadership"><span class="ar-only">القيادة</span><span class="en-only">Leadership</span></a>
+      <a href="#contact"><span class="ar-only">تواصل معنا</span><span class="en-only">Contact</span></a>
+    </div>
+    <div class="tools">
+      <button class="chip" id="langBtn" type="button">EN</button>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- ======================== HERO ======================== -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">
+        <span class="ar-only">شركة سعودية قابضة · عنيزة، القصيم</span>
+        <span class="en-only">Saudi Holding Company · Unaizah, Qassim</span>
+      </p>
+      <h1>
+        <span class="ar-only">مظلة واحدة، كيانات متخصصة.</span>
+        <span class="en-only">One umbrella, specialised entities.</span>
+      </h1>
+      <p class="sub ar-only">نواة الألماس القابضة شركة سعودية تنتظم تحت مظلتها كيانات متخصصة في الطاقة والعطور وخدمات المركبات — بتوجيه استراتيجي مركزي وتشغيل مستقل لكل علامة.</p>
+      <p class="sub en-only">Nawat Alalmas Holding is a Saudi company under which specialised entities in energy, fragrance and automotive services operate — centrally directed, independently run.</p>
+      <div class="hero-cta">
+        <a class="btn btn-solid" href="#companies">
+          <span class="ar-only">شركاتنا</span>
+          <span class="en-only">Our Companies</span>
+        </a>
+        <a class="btn btn-ghost" href="#contact">
+          <span class="ar-only">تواصل معنا</span>
+          <span class="en-only">Contact Us</span>
+        </a>
+      </div>
+    </div>
+    <div>
+      <!-- Facet SVG — group structure as a brilliant-cut diagram -->
+      <svg class="facet" viewBox="0 0 460 420" role="img" aria-hidden="true">
+        <!-- Outer diamond -->
+        <path class="l1 draw" d="M230 35 L405 155 L230 375 L55 155 Z"/>
+        <!-- Equator -->
+        <path class="l2 draw" d="M55 155 H405"/>
+        <!-- Inner vertical lens -->
+        <path class="l2 draw" d="M230 35 L172 155 L230 375 L288 155 Z"/>
+        <!-- Hub dot -->
+        <circle class="dot fade" cx="230" cy="155" r="4.5"/>
+        <!-- Three branches -->
+        <path class="l2 fade" d="M230 159 L105 295 M230 159 L230 300 M230 159 L355 295"/>
+        <!-- Branch dots -->
+        <circle class="dot fade" cx="105" cy="295" r="3.5"/>
+        <circle class="dot fade" cx="230" cy="300" r="3.5"/>
+        <circle class="dot fade" cx="355" cy="295" r="3.5"/>
+        <!-- HOLDING label -->
+        <text class="core fade" x="230" y="132">
+          <tspan class="ar-only">القابضة</tspan>
+          <tspan class="en-only">HOLDING</tspan>
+        </text>
+        <!-- Company labels AR -->
+        <text class="co-label fade ar-only" x="105" y="318">بريم</text>
+        <text class="co-label fade ar-only" x="230" y="323">فراشة</text>
+        <text class="co-label fade ar-only" x="355" y="318">نور</text>
+        <!-- Company labels EN -->
+        <text class="co-label fade en-only" x="105" y="318">PREEM</text>
+        <text class="co-label fade en-only" x="230" y="323">FRASHAH</text>
+        <text class="co-label fade en-only" x="355" y="318">NOOR</text>
+        <!-- Sector sub-labels -->
+        <text class="fade ar-only" x="105" y="335">طاقة وبترول</text>
+        <text class="fade ar-only" x="230" y="340">عطور وتجزئة</text>
+        <text class="fade ar-only" x="355" y="335">خدمات مركبات</text>
+        <text class="fade en-only" x="105" y="335">Energy</text>
+        <text class="fade en-only" x="230" y="340">Fragrance</text>
+        <text class="fade en-only" x="355" y="335">Automotive</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== ABOUT ======================== -->
+<section class="sec" id="about">
+  <div class="wrap rv">
+    <p class="eyebrow">
+      <span class="ar-only">من نحن</span>
+      <span class="en-only">About</span>
+    </p>
+    <h2>
+      <span class="ar-only">الدور الذي تؤديه الشركة الأم</span>
+      <span class="en-only">What the parent company does</span>
+    </h2>
+    <p class="lede ar-only">تأسست نواة الألماس القابضة لتكون الكيان الذي تنتظم تحته علامات تجارية متخصصة. تتولى القابضة التوجيه الاستراتيجي وتخصيص الموارد وإرساء قواعد الحوكمة، وتترك التشغيل اليومي لكل شركة تابعة ضمن نطاق تخصصها.</p>
+    <p class="lede en-only">Nawat Alalmas Holding is the entity under which specialised brands are organised. It sets strategic direction, allocates capital and establishes governance, while day-to-day operations remain with each subsidiary.</p>
+    <div class="pillars">
+      <div class="pillar">
+        <h4>
+          <span class="ar-only">التوجيه الاستراتيجي</span>
+          <span class="en-only">Strategic direction</span>
+        </h4>
+        <p class="ar-only">تحديد الأسواق التي تدخلها المجموعة وتلك التي تصرف النظر عنها، وترتيب أولويات النمو بين الكيانات.</p>
+        <p class="en-only">Deciding which markets the group enters and which it passes over, and sequencing growth across entities.</p>
+      </div>
+      <div class="pillar">
+        <h4>
+          <span class="ar-only">الحوكمة والامتثال</span>
+          <span class="en-only">Governance &amp; compliance</span>
+        </h4>
+        <p class="ar-only">قواعد تنظيمية موحدة تتناسب مع حجم كل كيان ومرحلته، دون إثقاله بإجراءات تسبق حاجته إليها.</p>
+        <p class="en-only">Common internal rules scaled to each entity's size and stage, without process ahead of need.</p>
+      </div>
+      <div class="pillar">
+        <h4>
+          <span class="ar-only">تخصيص الموارد</span>
+          <span class="en-only">Capital allocation</span>
+        </h4>
+        <p class="ar-only">توزيع الاستثمار الداخلي على أساس ما تحتمله الموارد المتاحة، وقياس العائد قبل التوسع.</p>
+        <p class="en-only">Internal investment allocated against what resources can carry, with returns measured before expansion.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== COMPANIES ======================== -->
+<section class="sec sec-sand" id="companies">
+  <div class="wrap rv">
+    <p class="eyebrow">
+      <span class="ar-only">شركاتنا</span>
+      <span class="en-only">Our Companies</span>
+    </p>
+    <h2>
+      <span class="ar-only">العلامات التابعة</span>
+      <span class="en-only">Subsidiary brands</span>
+    </h2>
+    <p class="lede ar-only">ثلاثة كيانات متخصصة، كل منها مستقل في تشغيله ومملوك للشركة الأم.</p>
+    <p class="lede en-only">Three specialised entities, each independently operated and wholly owned by the parent company.</p>
+
+    <div class="cos">
+
+      <!-- Preem -->
+      <div class="co">
+        <span class="status-badge badge-active">
+          <span class="pulse"></span>
+          <span class="ar-only">فعّال</span>
+          <span class="en-only">Active</span>
+        </span>
+        <div class="co-top">
+          <div class="co-logo">P</div>
+          <div>
+            <h3>
+              <span class="ar-only">بريم</span>
+              <span class="en-only">Preem</span>
+            </h3>
+            <span class="tag ar-only">طاقة وبترول</span>
+            <span class="tag en-only">Energy &amp; Petroleum</span>
+          </div>
+        </div>
+        <p class="desc ar-only">شركة متخصصة في قطاع الطاقة والبترول، تقدم حلول الوقود والخدمات البترولية للقطاع التجاري والأفراد في المملكة العربية السعودية.</p>
+        <p class="desc en-only">A specialist in the energy and petroleum sector, delivering fuel solutions and petroleum services to commercial and individual clients across the Kingdom.</p>
+        <a class="golink" href="https://preemsa.com" target="_blank" rel="noopener">
+          <span class="ar-only">زيارة الموقع ←</span>
+          <span class="en-only">Visit site →</span>
+        </a>
+      </div>
+
+      <!-- Frashah -->
+      <div class="co">
+        <span class="status-badge badge-soon">
+          <span class="ar-only">قريباً</span>
+          <span class="en-only">Coming soon</span>
+        </span>
+        <div class="co-top">
+          <div class="co-logo">ف</div>
+          <div>
+            <h3>
+              <span class="ar-only">فراشة</span>
+              <span class="en-only">Frashah</span>
+            </h3>
+            <span class="tag ar-only">عطور وتجزئة</span>
+            <span class="tag en-only">Fragrance &amp; Retail</span>
+          </div>
+        </div>
+        <p class="desc ar-only">علامة تجارية في قطاع العطور والتجزئة، تستهدف تقديم تجربة عطرية متميزة بجودة عالية وهوية سعودية أصيلة.</p>
+        <p class="desc en-only">A fragrance and retail brand targeting a distinguished olfactory experience with premium quality and an authentic Saudi identity.</p>
+        <span class="no-link ar-only">قريباً — frashahsa.com</span>
+        <span class="no-link en-only">Coming soon — frashahsa.com</span>
+      </div>
+
+      <!-- Noor -->
+      <div class="co">
+        <span class="status-badge badge-soon">
+          <span class="ar-only">قريباً</span>
+          <span class="en-only">Coming soon</span>
+        </span>
+        <div class="co-top">
+          <div class="co-logo">ن</div>
+          <div>
+            <h3>
+              <span class="ar-only">نور</span>
+              <span class="en-only">Noor</span>
+            </h3>
+            <span class="tag ar-only">خدمات المركبات</span>
+            <span class="tag en-only">Automotive Services</span>
+          </div>
+        </div>
+        <p class="desc ar-only">مركز متكامل لخدمات المركبات، يسعى لتقديم حلول مبتكرة في قطاع قطع الغيار وصيانة السيارات.</p>
+        <p class="desc en-only">An integrated automotive hub aiming to deliver innovative solutions in the spare parts and vehicle maintenance sector.</p>
+        <span class="no-link ar-only">قريباً</span>
+        <span class="no-link en-only">Coming soon</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======================== SECTORS ======================== -->
+<section class="sec" id="sectors">
+  <div class="wrap rv">
+    <p class="eyebrow">
+      <span class="ar-only">القطاعات</span>
+      <span class="en-only">Sectors</span>
+    </p>
+    <h2>
+      <span class="ar-only">القطاعات التي نعمل فيها</span>
+      <span class="en-only">The sectors we operate in</span>
+    </h2>
+    <p class="lede ar-only">تختار المجموعة قطاعاتها بعناية — حيث يكون الأثر أكبر والفرصة أوضح.</p>
+    <p class="lede en-only">The group selects its sectors deliberately — where impact is greatest and opportunity is clearest.</p>
+
+    <div class="sectors">
+      <div class="sector">
+        <span class="num">01</span>
+        <h3>
+          <span class="ar-only">الطاقة والبترول</span>
+          <span class="en-only">Energy &amp; Petroleum</span>
+        </h3>
+        <p class="ar-only">توفير حلول الوقود وخدمات البترول للقطاع التجاري والأفراد في المملكة العربية السعودية.</p>
+        <p class="en-only">Providing fuel solutions and petroleum services to commercial and individual clients across the Kingdom.</p>
+      </div>
+      <div class="sector">
+        <span class="num">02</span>
+        <h3>
+          <span class="ar-only">العطور والتجزئة</span>
+          <span class="en-only">Fragrance &amp; Retail</span>
+        </h3>
+        <p class="ar-only">بناء علامة عطرية سعودية متميزة تجمع بين الجودة العالية والهوية المحلية الأصيلة.</p>
+        <p class="en-only">Building a distinctive Saudi fragrance brand that combines premium quality with authentic local identity.</p>
+      </div>
+      <div class="sector">
+        <span class="num">03</span>
+        <h3>
+          <span class="ar-only">خدمات المركبات</span>
+          <span class="en-only">Automotive Services</span>
+        </h3>
+        <p class="ar-only">حلول متكاملة في قطاع قطع الغيار وصيانة السيارات تلبيةً لاحتياجات السوق السعودي.</p>
+        <p class="en-only">Integrated solutions in spare parts and vehicle maintenance to meet the needs of the Saudi market.</p>
+      </div>
+      <div class="sector">
+        <span class="num">04</span>
+        <h3>
+          <span class="ar-only">الاستثمار الاستراتيجي</span>
+          <span class="en-only">Strategic Investment</span>
+        </h3>
+        <p class="ar-only">توجيه الموارد نحو القطاعات ذات النمو المرتفع، وبناء محفظة متوازنة ومستدامة على المدى البعيد.</p>
+        <p class="en-only">Directing capital toward high-growth sectors, building a balanced and sustainable long-term portfolio.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== LEADERSHIP ======================== -->
+<section class="sec sec-mint" id="leadership">
+  <div class="wrap rv">
+    <p class="eyebrow">
+      <span class="ar-only">القيادة</span>
+      <span class="en-only">Leadership</span>
+    </p>
+    <h2>
+      <span class="ar-only">من يقود المجموعة</span>
+      <span class="en-only">Who leads the group</span>
+    </h2>
+    <div class="leader">
+      <div class="portrait">
+        <span class="ar-only">الصورة الرسمية · ٤:٥</span>
+        <span class="en-only">Official portrait · 4:5</span>
+      </div>
+      <div>
+        <h3>
+          <span class="ar-only">محمد بن صالح بن حمد العليان</span>
+          <span class="en-only">Mohammed bin Saleh Al-Olayan</span>
+        </h3>
+        <p class="role ar-only">المؤسس والرئيس التنفيذي</p>
+        <p class="role en-only">Founder &amp; Chief Executive Officer</p>
+        <p class="ar-only">مؤسس نواة الألماس القابضة ورئيسها التنفيذي. تتركز خبرته في تأسيس الكيانات التجارية من نقطة الصفر واستكمال متطلباتها النظامية والتشغيلية، وفي هيكلة المجموعات بحيث تنتظم أكثر من علامة تجارية تحت مظلة إدارية واحدة.</p>
+        <p class="en-only">Founder and Chief Executive of Nawat Alalmas Holding. His experience centres on establishing commercial entities from the ground up, completing their regulatory and operational requirements, and structuring groups so multiple brands sit under one administrative umbrella.</p>
+        <p class="ar-only">وله ممارسة مباشرة في بناء نماذج الدخل والتسعير، وفي التفاوض على الشراكات التجارية وإدارة العلاقات مع العملاء والجهات ذات الصلة بنشاط المجموعة.</p>
+        <p class="en-only">He works directly on revenue and pricing models, partnership negotiation, and relationships with clients and counterparties across the group.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== CONTACT ======================== -->
+<section class="sec sec-sand" id="contact">
+  <div class="wrap rv">
+    <p class="eyebrow">
+      <span class="ar-only">تواصل معنا</span>
+      <span class="en-only">Contact</span>
+    </p>
+    <h2>
+      <span class="ar-only">للشراكات والاستفسارات</span>
+      <span class="en-only">Partnerships &amp; enquiries</span>
+    </h2>
+    <div class="contact-grid">
+
+      <dl class="info">
+        <dt class="ar-only">المقر الرئيسي</dt>
+        <dt class="en-only">Head office</dt>
+        <dd class="ar-only">٨٦٧٥ طريق الملك عبدالعزيز، حي الصالحية، عنيزة ٥٦٤٣٤، المملكة العربية السعودية</dd>
+        <dd class="en-only">8675 King Abdulaziz Rd, As Salhiyah Dist., Unaizah 56434, Kingdom of Saudi Arabia</dd>
+
+        <dt class="ar-only">البريد الإلكتروني</dt>
+        <dt class="en-only">Email</dt>
+        <dd><a href="mailto:info@nah.sa">info@nah.sa</a></dd>
+
+        <dt class="ar-only">الهاتف</dt>
+        <dt class="en-only">Telephone</dt>
+        <dd><a href="tel:115001211">115001211</a></dd>
+
+        <dt class="ar-only">ساعات العمل</dt>
+        <dt class="en-only">Working hours</dt>
+        <dd class="ar-only">الأحد – الخميس، ٩:٠٠ – ١٧:٠٠</dd>
+        <dd class="en-only">Sunday – Thursday, 9:00 – 17:00</dd>
+      </dl>
+
+      <div class="map-box">
+        <p class="short-addr">QAGA8675</p>
+        <p class="ar-only">العنوان الوطني المختصر</p>
+        <p class="en-only">Short national address</p>
+        <br>
+        <p class="ar-only">٨٦٧٥ طريق الملك عبدالعزيز</p>
+        <p class="en-only">8675 King Abdulaziz Rd</p>
+        <p class="ar-only">حي الصالحية، عنيزة ٥٦٤٣٤</p>
+        <p class="en-only">As Salhiyah, Unaizah 56434</p>
+        <p class="ar-only" style="margin-top:8px;font-size:13px;color:var(--sage)">للتحقق: proof.address.gov.sa</p>
+        <p class="en-only" style="margin-top:8px;font-size:13px;color:var(--sage)">Verify at: proof.address.gov.sa</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ======================== FOOTER ======================== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="brandmark">
+        <svg viewBox="0 0 40 40" aria-hidden="true">
+          <path d="M20 3 L34 15 L20 37 L6 15 Z" fill="none" stroke="#A8792F" stroke-width="1.6"/>
+          <path d="M6 15 H34" fill="none" stroke="#6E908B" stroke-width="1"/>
+        </svg>
+        <span class="ar-only">نواة الألماس القابضة</span>
+        <span class="en-only">Nawat Alalmas Holding</span>
+      </div>
+      <div class="foot-links">
+        <a href="#about"><span class="ar-only">من نحن</span><span class="en-only">About</span></a>
+        <a href="#companies"><span class="ar-only">شركاتنا</span><span class="en-only">Companies</span></a>
+        <a href="#sectors"><span class="ar-only">القطاعات</span><span class="en-only">Sectors</span></a>
+        <a href="#contact"><span class="ar-only">تواصل معنا</span><span class="en-only">Contact</span></a>
+        <a href="https://nah.sa">NAH.sa</a>
+      </div>
+    </div>
+    <div class="legal">
+      <span>
+        <span class="ar-only">الاسم النظامي: </span>
+        <span class="en-only">Registered name: </span>
+        <b class="ar-only">شركة نواة الألماس القابضة</b>
+        <b class="en-only">Nawat Alalmas Company Holding</b>
+      </span>
+      <span>
+        <span class="ar-only">الرقم الوطني: </span>
+        <span class="en-only">National No.: </span>
+        <b>7053486549</b>
+      </span>
+      <span>
+        <span class="ar-only">السجل التجاري: </span>
+        <span class="en-only">CR No.: </span>
+        <b id="crNum">—</b>
+      </span>
+      <span>
+        <span class="ar-only">الرقم الضريبي: </span>
+        <span class="en-only">VAT No.: </span>
+        <b id="vatNum">—</b>
+      </span>
+    </div>
+    <p class="copy">© 2026 <span class="ar-only">شركة نواة الألماس القابضة</span><span class="en-only">Nawat Alalmas Holding</span></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+"use strict";
+
+var lang = "ar";
+var langBtn = document.getElementById("langBtn");
+var burger  = document.getElementById("burger");
+var menu    = document.getElementById("menu");
+
+function setLang(l){
+  lang = l;
+  document.documentElement.lang = l;
+  document.documentElement.dir  = l === "ar" ? "rtl" : "ltr";
+  langBtn.textContent = l === "ar" ? "EN" : "ع";
+  document.title = l === "ar"
+    ? "نواة الألماس القابضة"
+    : "Nawat Alalmas Holding";
+}
+
+langBtn.addEventListener("click", function(){
+  setLang(lang === "ar" ? "en" : "ar");
+});
+
+burger.addEventListener("click", function(){
+  var open = menu.classList.toggle("open");
+  burger.setAttribute("aria-expanded", open);
+});
+menu.addEventListener("click", function(e){
+  if (e.target.closest("a")){ menu.classList.remove("open"); burger.setAttribute("aria-expanded","false"); }
+});
+
+/* scroll reveal */
+if ("IntersectionObserver" in window && window.matchMedia("(prefers-reduced-motion: no-preference)").matches){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(x){
+      if (x.isIntersecting){ x.target.classList.add("in"); io.unobserve(x.target); }
+    });
+  },{threshold:.1});
+  document.querySelectorAll(".rv").forEach(function(el){ io.observe(el); });
+} else {
+  document.querySelectorAll(".rv").forEach(function(el){ el.classList.add("in"); });
+}
+
+})();
+</script>
+</body>
+</html>
