@@ -238,6 +238,9 @@ html[lang="en"] .co-logo{font-family:"Archivo",sans-serif}
   aspect-ratio:4/5;background:var(--mist);border:1px solid var(--line);
   border-radius:var(--r);display:grid;place-items:center;text-align:center;padding:14px;overflow:hidden
 }
+.portrait.has-photo{padding:0}
+.portrait.has-photo .ph{display:none}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 15%}
 .sec-mint .portrait{background:var(--white)}
 .portrait img{width:100%;height:100%;object-fit:cover}
 .portrait span{font-size:11.5px;color:var(--silver);line-height:1.5}
@@ -784,9 +787,11 @@ footer{
 
       <!-- Board member -->
       <div class="leader">
-        <div class="portrait">
-          <span class="ar-only">الصورة الرسمية<br>٤:٥</span>
-          <span class="en-only">Official portrait<br>4:5</span>
+        <div class="portrait has-photo">
+          <img src="photos/azzam.jpg" alt="عزام عبدالعزيز السليم"
+               onerror="this.parentElement.classList.remove('has-photo');this.remove()">
+          <span class="ph ar-only">الصورة الرسمية<br>٤:٥</span>
+          <span class="ph en-only">Official portrait<br>4:5</span>
         </div>
         <div>
           <h3>
