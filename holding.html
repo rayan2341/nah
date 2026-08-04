@@ -226,6 +226,14 @@ html[lang="en"] .co-logo{font-family:"Archivo",sans-serif}
 /* leadership */
 .leaders{margin-top:48px}
 .leader{display:grid;grid-template-columns:230px 1fr;gap:clamp(26px,4vw,48px);align-items:start;max-width:900px}
+.board{
+  display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,48px);
+  margin-top:clamp(40px,5vw,58px);padding-top:clamp(36px,4.5vw,50px);
+  border-top:1px solid var(--line)
+}
+.board .leader{grid-template-columns:150px 1fr;gap:24px;max-width:none}
+.board .leader h3{font-size:19px}
+.board .leader p{font-size:14.5px}
 .portrait{
   aspect-ratio:4/5;background:var(--mist);border:1px solid var(--line);
   border-radius:var(--r);display:grid;place-items:center;text-align:center;padding:14px;overflow:hidden
@@ -299,7 +307,7 @@ footer{
   .cos{grid-template-columns:1fr 1fr}
 }
 @media(max-width:900px){
-  .hero-grid,.contact-grid,.vm,.leaders,.foot-top{grid-template-columns:1fr}
+  .hero-grid,.contact-grid,.vm,.board,.foot-top{grid-template-columns:1fr}
   .menu{
     display:none;position:absolute;top:74px;inset-inline:0;background:var(--paper);
     flex-direction:column;gap:0;padding:10px var(--pad) 22px;border-bottom:1px solid var(--line)
@@ -310,7 +318,7 @@ footer{
 }
 @media(max-width:640px){
   .cos{grid-template-columns:1fr}
-  .leader{grid-template-columns:120px 1fr;gap:18px}
+  .leader,.board .leader{grid-template-columns:120px 1fr;gap:18px}
 }
 </style>
 </head>
@@ -732,6 +740,28 @@ footer{
 
     <div class="leaders">
 
+      <!-- Chairman -->
+      <div class="leader">
+        <div class="portrait">
+          <span class="ar-only">الصورة الرسمية<br>٤:٥</span>
+          <span class="en-only">Official portrait<br>4:5</span>
+        </div>
+        <div>
+          <h3>
+            <span class="ar-only">د. ريان صالح المغير</span>
+            <span class="en-only">Dr. Rayan Saleh Almoghyir</span>
+          </h3>
+          <p class="role ar-only">رئيس مجلس الإدارة</p>
+          <p class="role en-only">Chairman of the Board</p>
+          <p class="ar-only">يتولى د. ريان صالح المغير قيادة التوجه الاستراتيجي لشركة نواة الألماس القابضة والإشراف على محفظة مشاريعها وعلاماتها التجارية.</p>
+          <p class="ar-only">يركز دوره على اكتشاف الفرص، وتطوير المشاريع الجديدة، وتحديد أولويات الاستثمار والنمو، وبناء الشراكات التي تدعم توسع المجموعة وتحقيق أهدافها طويلة المدى.</p>
+          <p class="en-only">Dr. Rayan Saleh Almoghyir leads the strategic direction of Nawat Alalmas Holding and oversees its portfolio of ventures and brands.</p>
+          <p class="en-only">His role focuses on identifying opportunities, developing new ventures, setting investment and growth priorities, and building partnerships that support the group's long-term expansion.</p>
+        </div>
+      </div>
+
+      <div class="board">
+
       <!-- CEO -->
       <div class="leader">
         <div class="portrait">
@@ -743,8 +773,8 @@ footer{
             <span class="ar-only">محمد بن صالح العليان</span>
             <span class="en-only">Mohammed bin Saleh Al-Olayan</span>
           </h3>
-          <p class="role ar-only">الرئيس التنفيذي</p>
-          <p class="role en-only">Chief Executive Officer</p>
+          <p class="role ar-only">الرئيس التنفيذي وعضو مجلس الإدارة</p>
+          <p class="role en-only">Chief Executive Officer &amp; Board Member</p>
           <p class="ar-only">يقود محمد بن صالح العليان أعمال الشركة التنفيذية، ويتابع تأسيس وتشغيل الشركات والعلامات التابعة، ويعمل على تحويل استراتيجية المجموعة إلى خطط ومبادرات قابلة للتنفيذ.</p>
           <p class="ar-only">تتركز مسؤولياته في تطوير نماذج الأعمال، وبناء الهياكل التشغيلية، ومتابعة الأداء، وإدارة العلاقات والشراكات المرتبطة بأنشطة المجموعة.</p>
           <p class="en-only">Mohammed bin Saleh Al-Olayan leads the group's executive operations and oversees the establishment and operation of its portfolio companies and brands.</p>
@@ -752,6 +782,25 @@ footer{
         </div>
       </div>
 
+      <!-- Board member -->
+      <div class="leader">
+        <div class="portrait">
+          <span class="ar-only">الصورة الرسمية<br>٤:٥</span>
+          <span class="en-only">Official portrait<br>4:5</span>
+        </div>
+        <div>
+          <h3>
+            <span class="ar-only">عزام عبدالعزيز السليم</span>
+            <span class="en-only">Azzam Abdulaziz Al-Sulaim</span>
+          </h3>
+          <p class="role ar-only">عضو مجلس الإدارة</p>
+          <p class="role en-only">Board Member</p>
+          <p class="ar-only">مهندس معماري ذو خبرة في حوكمة القطاع غير الربحي وتنسيق المشاريع الهندسية والإدارية، مع اهتمام برفع كفاءة إدارة المشاريع وتعزيز جودة التنفيذ.</p>
+          <p class="en-only">An architect with experience in non-profit sector governance and the coordination of engineering and administrative projects, with a focus on improving project-management efficiency and strengthening execution quality.</p>
+        </div>
+      </div>
+
+      </div>
     </div>
   </div>
 </section>
@@ -808,7 +857,7 @@ footer{
 
         <dt class="ar-only">الهاتف</dt>
         <dt class="en-only">Telephone</dt>
-        <dd><a href="tel:+966115001211" dir="ltr">+966 115001211</a></dd>
+        <dd><a href="tel:+966165107300" dir="ltr">+966 165107300</a></dd>
 
         <dt class="ar-only">ساعات العمل</dt>
         <dt class="en-only">Working Hours</dt>
