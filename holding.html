@@ -32,7 +32,7 @@
   --r:3px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:78px}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
 body{
   background:var(--paper);color:var(--ink);
   font-family:"IBM Plex Sans Arabic","Archivo",system-ui,sans-serif;
@@ -81,14 +81,14 @@ header{
   position:sticky;top:0;z-index:60;background:rgba(250,250,250,.92);
   backdrop-filter:blur(14px);border-bottom:1px solid var(--line)
 }
-.nav{display:flex;align-items:center;gap:22px;height:74px}
+.nav{display:flex;align-items:center;gap:22px;height:88px}
 .brandmark{
   display:flex;align-items:center;gap:11px;
   font-family:"Noto Kufi Arabic",sans-serif;font-weight:700;font-size:15px;white-space:nowrap
 }
 html[lang="en"] .brandmark{font-family:"Archivo",sans-serif}
 .brandmark svg{width:27px;height:27px;flex:none}
-.brandmark .logo-img{height:44px;width:auto;flex:none;mix-blend-mode:multiply}
+.brandmark .logo-img{height:60px;width:auto;flex:none;mix-blend-mode:multiply}
 .brandmark .brand-fallback{display:none}
 html[lang="ar"] .brandmark.no-logo .brand-fallback.ar-only{display:inline}
 html[lang="en"] .brandmark.no-logo .brand-fallback.en-only{display:inline}
@@ -316,7 +316,7 @@ footer{
 @media(max-width:900px){
   .hero-grid,.contact-grid,.vm,.board,.foot-top{grid-template-columns:1fr}
   .menu{
-    display:none;position:absolute;top:74px;inset-inline:0;background:var(--paper);
+    display:none;position:absolute;top:88px;inset-inline:0;background:var(--paper);
     flex-direction:column;gap:0;padding:10px var(--pad) 22px;border-bottom:1px solid var(--line)
   }
   .menu.open{display:flex}
