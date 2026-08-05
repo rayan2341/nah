@@ -123,13 +123,27 @@ html[lang="en"] .hero h1{max-width:17ch}
 .facet .l1{fill:none;stroke:var(--emerald);stroke-width:1.2;opacity:.75}
 .facet .l2{fill:none;stroke:var(--silver);stroke-width:1;opacity:.9}
 .facet .dot{fill:var(--emerald)}
-.facet text{
-  font-family:"Noto Kufi Arabic",sans-serif;font-size:11px;fill:var(--slate);
-  letter-spacing:.04em;text-anchor:middle
+/* labels are HTML, not SVG <text>: iOS Safari mis-shapes Arabic in SVG */
+.diagram{position:relative;width:100%}
+.dg-label{
+  position:absolute;transform:translate(-50%,0);text-align:center;
+  white-space:nowrap;line-height:1.4;pointer-events:none
 }
-html[lang="en"] .facet text{font-family:"Archivo",sans-serif;font-size:10px;letter-spacing:.1em}
-.facet .core{fill:var(--ink);font-size:13px;font-weight:700}
-.facet .co-label{font-size:12.5px;fill:var(--ink-2);font-weight:500}
+.dg-core{
+  transform:translate(-50%,-50%);
+  font-family:"Noto Kufi Arabic",sans-serif;font-weight:700;
+  font-size:clamp(11px,2.8vw,13px);color:var(--ink)
+}
+html[lang="en"] .dg-core{font-family:"Archivo",sans-serif;letter-spacing:.08em}
+.dg-name{
+  font-family:"Noto Kufi Arabic",sans-serif;font-weight:500;
+  font-size:clamp(10px,2.6vw,12.5px);color:var(--ink-2)
+}
+.dg-sub{
+  font-family:"Noto Kufi Arabic",sans-serif;
+  font-size:clamp(9px,2.2vw,11px);color:var(--slate)
+}
+html[lang="en"] .dg-name,html[lang="en"] .dg-sub{font-family:"Archivo",sans-serif;letter-spacing:.06em}
 @media(prefers-reduced-motion:no-preference){
   .facet .draw{
     stroke-dasharray:700;stroke-dashoffset:700;
@@ -137,7 +151,7 @@ html[lang="en"] .facet text{font-family:"Archivo",sans-serif;font-size:10px;lett
   }
   .facet .draw:nth-of-type(2){animation-delay:.12s}
   .facet .draw:nth-of-type(3){animation-delay:.24s}
-  .facet .fade{opacity:0;animation:fi .8s ease forwards .9s}
+  .facet .fade,.dg-label{opacity:0;animation:fi .8s ease forwards .9s}
 }
 @keyframes dr{to{stroke-dashoffset:0}}
 @keyframes fi{to{opacity:1}}
@@ -383,8 +397,10 @@ footer{
       </div>
     </div>
     <div>
-      <!-- Group structure as a brilliant-cut facet -->
-      <svg class="facet" viewBox="0 0 460 420" role="img" aria-hidden="true">
+      <!-- Group structure: SVG geometry, HTML labels -->
+      <div class="diagram" role="img"
+           aria-label="هيكل المجموعة: القابضة وتحتها بريم ونور أوتو هب وفراشة">
+      <svg class="facet" viewBox="0 0 460 420" aria-hidden="true">
         <path class="l1 draw" d="M230 35 L405 155 L230 375 L55 155 Z"/>
         <path class="l2 draw" d="M55 155 H405"/>
         <path class="l2 draw" d="M230 35 L172 155 L230 375 L288 155 Z"/>
@@ -393,25 +409,27 @@ footer{
         <circle class="dot fade" cx="105" cy="295" r="3.5"/>
         <circle class="dot fade" cx="230" cy="300" r="3.5"/>
         <circle class="dot fade" cx="355" cy="295" r="3.5"/>
-        <text class="core fade" x="230" y="132">
-          <tspan class="ar-only">القابضة</tspan>
-          <tspan class="en-only">HOLDING</tspan>
-        </text>
-        <!-- Arabic labels -->
-        <text class="co-label fade ar-only" x="105" y="318">بريم</text>
-        <text class="co-label fade ar-only" x="230" y="323">نور أوتو هب</text>
-        <text class="co-label fade ar-only" x="355" y="318">فراشة</text>
-        <text class="fade ar-only" x="105" y="336">منصات رقمية</text>
-        <text class="fade ar-only" x="230" y="341">ذكاء اصطناعي</text>
-        <text class="fade ar-only" x="355" y="336">منتجات استهلاكية</text>
-        <!-- English labels -->
-        <text class="co-label fade en-only" x="105" y="318">PREEM</text>
-        <text class="co-label fade en-only" x="230" y="323">NOOR AUTO HUB</text>
-        <text class="co-label fade en-only" x="355" y="318">FARASHAH</text>
-        <text class="fade en-only" x="105" y="336">Digital Platforms</text>
-        <text class="fade en-only" x="230" y="341">AI &amp; Technology</text>
-        <text class="fade en-only" x="355" y="336">Consumer Products</text>
       </svg>
+
+        <div class="dg-label dg-core" style="left:50%;top:31.4%">
+          <span class="ar-only">القابضة</span><span class="en-only">HOLDING</span>
+        </div>
+
+        <div class="dg-label" style="left:22.8%;top:74.8%">
+          <div class="dg-name"><span class="ar-only">بريم</span><span class="en-only">PREEM</span></div>
+          <div class="dg-sub"><span class="ar-only">منصات رقمية</span><span class="en-only">Digital Platforms</span></div>
+        </div>
+
+        <div class="dg-label" style="left:50%;top:76%">
+          <div class="dg-name"><span class="ar-only">نور أوتو هب</span><span class="en-only">NOOR AUTO HUB</span></div>
+          <div class="dg-sub"><span class="ar-only">ذكاء اصطناعي</span><span class="en-only">AI &amp; Technology</span></div>
+        </div>
+
+        <div class="dg-label" style="left:77.2%;top:74.8%">
+          <div class="dg-name"><span class="ar-only">فراشة</span><span class="en-only">FARASHAH</span></div>
+          <div class="dg-sub"><span class="ar-only">منتجات استهلاكية</span><span class="en-only">Consumer Products</span></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
