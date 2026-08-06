@@ -179,10 +179,12 @@ html[lang="en"] .dg-name,html[lang="en"] .dg-sub{font-family:"Archivo",sans-seri
 .co:hover{border-color:var(--emerald);box-shadow:0 8px 26px rgba(31,41,55,.08)}
 .co-top{display:flex;align-items:center;gap:14px;margin-bottom:18px;padding-inline-end:70px}
 .co-logo{
-  width:48px;height:48px;border:1px solid var(--line-b);display:grid;place-items:center;
-  flex:none;border-radius:var(--r);
+  width:56px;height:56px;border:1px solid var(--line);display:grid;place-items:center;
+  flex:none;border-radius:var(--r);padding:5px;background:var(--white);
   font:700 18px/1 "Noto Kufi Arabic",sans-serif;color:var(--emerald)
 }
+.co-logo img{width:100%;height:100%;object-fit:contain}
+.co-logo.has-logo .ph{display:none}
 html[lang="en"] .co-logo{font-family:"Archivo",sans-serif}
 .co h3{font-size:19px;margin-bottom:3px}
 .co .tag{font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--emerald);font-weight:500;display:block;line-height:1.5}
@@ -349,8 +351,9 @@ footer{
 <header>
   <nav class="nav wrap">
     <a class="brandmark" href="#top" aria-label="نواة الألماس القابضة">
-      <img class="logo-img" src="logo.jpg" alt="نواة الألماس القابضة"
-           onerror="this.closest('.brandmark').classList.add('no-logo');this.remove()">
+      <img class="logo-img" src="logo.png" alt="نواة الألماس القابضة"
+           onerror="if(!this.dataset.retried){this.dataset.retried=1;this.src='logo.jpg';}
+                    else{this.closest('.brandmark').classList.add('no-logo');this.remove();}">
       <span class="brand-fallback ar-only">نواة الألماس القابضة</span>
       <span class="brand-fallback en-only">Nawat Alalmas Holding</span>
     </a>
@@ -526,7 +529,11 @@ footer{
           <span class="en-only">Active</span>
         </span>
         <div class="co-top">
-          <div class="co-logo">P</div>
+          <div class="co-logo has-logo">
+            <img src="logos/preem.jpg" alt="Preem"
+                 onerror="this.parentElement.classList.remove('has-logo');this.remove()">
+            <span class="ph">P</span>
+          </div>
           <div>
             <h3>
               <span class="ar-only">بريم</span>
@@ -558,7 +565,11 @@ footer{
           <span class="en-only">Active</span>
         </span>
         <div class="co-top">
-          <div class="co-logo">N</div>
+          <div class="co-logo has-logo">
+            <img src="logos/noor.png" alt="Noor Auto Hub"
+                 onerror="this.parentElement.classList.remove('has-logo');this.remove()">
+            <span class="ph">N</span>
+          </div>
           <div>
             <h3>
               <span class="ar-only">نور أوتو هب</span>
@@ -589,7 +600,11 @@ footer{
           <span class="en-only">Launching</span>
         </span>
         <div class="co-top">
-          <div class="co-logo">ف</div>
+          <div class="co-logo has-logo">
+            <img src="logos/frashah.png" alt="Farashah"
+                 onerror="this.parentElement.classList.remove('has-logo');this.remove()">
+            <span class="ph">ف</span>
+          </div>
           <div>
             <h3>
               <span class="ar-only">فراشة</span>
